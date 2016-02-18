@@ -10,8 +10,14 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    @IBOutlet weak var testTwoLabel: UILabel!
+    var firstAnswer:String = ""
+    var secondAnswer:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        testTwoLabel.text = secondAnswer
+        print(firstAnswer)
 
         // Do any additional setup after loading the view.
     }

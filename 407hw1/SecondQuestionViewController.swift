@@ -11,12 +11,14 @@ import UIKit
 class SecondQuestionViewController: UIViewController {
 
     
+    @IBOutlet weak var secondAnswerField: UITextField!
+    
     @IBOutlet weak var testLabel: UILabel!
-    var testString:String = ""
+    var firstAnswer:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = testString
+        testLabel.text = firstAnswer
         // Do any additional setup after loading the view.
     }
 
@@ -26,14 +28,19 @@ class SecondQuestionViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowResults"{
+            let resultsViewController = segue.destinationViewController as! ResultsViewController
+            resultsViewController.secondAnswer = "Nice Job!"
+            resultsViewController.firstAnswer = firstAnswer
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
