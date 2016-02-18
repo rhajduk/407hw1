@@ -13,12 +13,10 @@ class SecondQuestionViewController: UIViewController {
     
     @IBOutlet weak var secondAnswerField: UITextField!
     
-    @IBOutlet weak var testLabel: UILabel!
     var firstAnswer:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = firstAnswer
         // Do any additional setup after loading the view.
     }
 
@@ -35,7 +33,7 @@ class SecondQuestionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowResults"{
             let resultsViewController = segue.destinationViewController as! ResultsViewController
-            resultsViewController.secondAnswer = "Nice Job!"
+            resultsViewController.secondAnswer = secondAnswerField.text!
             resultsViewController.firstAnswer = firstAnswer
         }
         // Get the new view controller using segue.destinationViewController.

@@ -10,21 +10,30 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
-    @IBOutlet weak var testTwoLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    var numCorrect = 0
     var firstAnswer:String = ""
     var secondAnswer:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testTwoLabel.text = secondAnswer
-        print(firstAnswer)
-
+        calculateResults(firstAnswer,second: secondAnswer);
+        resultLabel.text = String(numCorrect)
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func calculateResults(first: String, second: String){
+        if first.lowercaseString == "wisconsin" {
+            numCorrect++
+        }
+        if second.lowercaseString == "umbrella" {
+            numCorrect++
+        }
     }
     
 
