@@ -10,9 +10,13 @@ import UIKit
 
 class SecondQuestionViewController: UIViewController {
 
+    
+    @IBOutlet weak var testLabel: UILabel!
+    var testString:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        testLabel.text = testString
         // Do any additional setup after loading the view.
     }
 
