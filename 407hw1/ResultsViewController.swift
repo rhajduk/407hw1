@@ -15,6 +15,9 @@ class ResultsViewController: UIViewController {
     var firstAnswer:String = ""
     var secondAnswer:String = ""
     
+    @IBAction func RestartBtn(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true);
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         calculateResults(firstAnswer,second: secondAnswer);
